@@ -32,6 +32,7 @@ export function UpdateInvoice({ id }: { id: string }) {
 export function DeleteInvoice({ id }: { id: string }) {    
   const deleteInvoiceWithId = deleteInvoice.bind(null, id);
   const [isPending, startTransition] = useTransition();
+  console.log(isPending);
 
   const handleDelete = () => {
     const confirmed = window.confirm('Are you sure you want to delete this invoice? This action cannot be undone.');
