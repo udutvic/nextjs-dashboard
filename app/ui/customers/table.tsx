@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { fetchFilteredCustomers } from '@/app/lib/data';
-import { CustomersTableType } from '@/app/lib/definitions';
+
 
 export default async function CustomersTable({
   query,
