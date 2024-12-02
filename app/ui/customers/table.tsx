@@ -1,13 +1,15 @@
-import Image from 'next/image';
-import { fetchFilteredCustomers } from '@/app/lib/data';
-
+import Image from "next/image";
+import { fetchFilteredCustomers } from "@/app/lib/data";
+import { FormattedCustomersTable } from '@/app/lib/definitions';
 
 export default async function CustomersTable({
-  query, 
+  query,
+  currentPage,
 }: {
-  query: string;  
+  query: string;
+  currentPage: number;
 }) {
-  const customers = await fetchFilteredCustomers(query);
+  const customers: FormattedCustomersTable[] = await fetchFilteredCustomers(query, currentPage);
 
   return (
     <div className="w-full">
@@ -74,7 +76,6 @@ export default async function CustomersTable({
                     </th>
                   </tr>
                 </thead>
-
                 <tbody className="divide-y divide-gray-200 text-gray-900">
                   {customers.map((customer) => (
                     <tr key={customer.id} className="group">
