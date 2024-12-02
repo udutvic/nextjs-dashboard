@@ -5,8 +5,7 @@ import { fetchFilteredCustomers } from '@/app/lib/data';
 export default async function CustomersTable({
   query, 
 }: {
-  query: string;
-  currentPage: number;
+  query: string;  
 }) {
   const customers = await fetchFilteredCustomers(query);
 
