@@ -3,8 +3,7 @@ import { fetchFilteredCustomers } from '@/app/lib/data';
 
 
 export default async function CustomersTable({
-  query,
-  currentPage,
+  query, 
 }: {
   query: string;
   currentPage: number;
